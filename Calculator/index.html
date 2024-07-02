@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        table button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(225, 225, 225, 0.6);
+            border: none;
+        }
+
+        table {
+            background: cornflowerblue;
+            margin-top: 100px;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        table {
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        table input {
+            padding: 13px 5px;
+            /* width: 90%; */
+            text-align: right;
+            border: none;
+            border-radius: 10px;
+            font-size: 19px;
+        }
+
+        table td button {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center">
+        <tr>
+            <td><button onclick="clear()">C</button></td>
+            <td colspan="3"><input type="text" id="txtInput"></td>
+        </tr>
+        <tr>
+            <td><button onclick="stordData('+')">+</button></td>
+            <td><button onclick="stordData('1')">1</button></td>
+            <td><button onclick="stordData('2')">2</button></td>
+            <td><button onclick="stordData('3')">3</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="stordData('-')">-</button></td>
+            <td><button onclick="stordData('4')">4</button></td>
+            <td><button onclick="stordData('5')">5</button></td>
+            <td><button onclick="stordData('6')">6</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="stordData('*')">x</button></td>
+            <td><button onclick="stordData('7')">7</button></td>
+            <td><button onclick="stordData('8')">8</button></td>
+            <td><button onclick="stordData('9')">9</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="stordData('/')">/</button></td>
+            <td><button onclick="stordData('.')">.</button></td>
+            <td><button onclick="stordData('0')">0</button></td>
+            <td><button onclick="calculate()">=</button></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<script>
+    function stordData(A) {
+        var txtInput = document.getElementById('txtInput')
+        var oldValue = txtInput.value
+        var operator = ["+", "-", "*", "/", "."]
+        var len = oldValue.length
+        var lastChar = oldValue[len - 1]
+        //console.log(lastChar)
+        if (operator.includes(A)) {
+            if (operator.includes(lastChar)) {
+                var removeLast = oldValue.slice(0, -1)
+                txtInput.value = removeLast + A
+            } else {
+                txtInput.value = oldValue + A
+            }
+
+        } else {
+            txtInput.value = oldValue + A
+        }
+    }
+    function calculate() {
+        var txtInput = document.getElementById('txtInput')
+        var newValue = eval(txtInput.value)
+        txtInput.value = newValue
+    }
+
+    function clear() {
+        document.getElementById('txtInput').value = '';
+    }
+</script>
