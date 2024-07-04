@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border: 5px dashed red;
+            border-radius: 50%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        @keyframes abcd {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p" class="p1">hello</p>
+    <p id="p" class="p1">hello</p>
+    <p id="p" class="p1">hello</p>
+    <p id="p" class="p1">hello</p>
+    <!-- <h3 id="p2"></h3> -->
+    <div id="main-circle"></div>
+
+</body>
+
+</html>
+<script>
+    // querySelector = Select only one  elements using class or id.
+    // var x = document.querySelector('#p');
+    // x.style.color = 'red';
+    // x.style.fontSize = '90px'
+
+
+    // querySelectorAll = Select all elements with SAME CLASS OR ID. 
+    // var x = document.querySelectorAll('#p');
+    // for (var i = 0; i < x.length; i++){
+    //     x[i].style.color = 'red'
+    //     x[i].style.fontSize = '30px'     
+    // }
+
+    var x = document.querySelectorAll('#p');
+    for (var i = 0; i < x.length; i++) {
+        // addEventListener = The addEventListener() method of the EventTarget interface sets up a function
+        // that will be called whenever the specified event is delivered to the target.
+
+        // event target by 'click'
+        // x[i] = document.addEventListener('click', (e) => {
+        //     e.target.style.color = 'red'
+        //     e.target.style.fontSize = '30px'
+        // })
+
+        // event target by 'mouseover'
+        // x[i] = document.addEventListener('mouseover', (e) => {
+        //     e.target.style.color = 'blue';
+        //     e.target.style.fontSize = '30px';
+        // });
+
+        // event target by 'mouseout'
+        // x[i] = document.addEventListener('mouseout', (e) => {
+        //     e.target.style.color = 'red';
+        // });
+    };
+
+    // event target by 'mousemove'
+    // var y = document.addEventListener('mousemove', () => {
+    //     document.getElementById('p2').innerHTML = Math.random();
+    // });
+
+    var z = document.addEventListener('mousemove', () => {
+        document.getElementById('main-circle').innerHTML = `
+        <div class="circle" id="circle" style="animation: abcd 1s alternate infinite;">
+            <h5>hello</h5>
+        </div> 
+        `
+    })
+</script>
