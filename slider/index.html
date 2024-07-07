@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center pt-5 py-sm-3">
+            <div class="col-lg-8 img-cont">
+                <img src="assets/images/img-1.jpg" alt="" name="abcd" id="slider" class="shadow-lg border border-3">
+                <button onclick="previous()" class="btn prev shadow-lg d-none d-sm-block" id="prev">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button onclick="next()" class="btn next shadow-lg d-none d-sm-block" id="next">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button onclick="opeen()" class="btn btn-primary info-btn d-none d-sm-block">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <div class="car-info text-center p-2 d-none d-sm-block" id="crInfo">
+                    <p class="text-dark">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum deleniti tenetur, totam est
+                        minima laudantium quidem, voluptatibus saepe recusandae esse aliquid. Quis, molestiae autem quo
+                        modi exercitationem dolores vero qui saepe expedita rerum provident eligendi similique nemo!
+                        Ipsum iusto temporibus vel. Expedita magnam explicabo quam, voluptatem architecto sunt
+                        dignissimos mollitia aperiam dolore error doloribus facere voluptatibus rem nihil corrupti
+                        facilis distinctio harum voluptates? 
+                    </p>
+                    <button onclick="closee()" class="btn btn-danger">CLOSE</button>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <div class="btn-cont pt-4">
+                    <button onclick="previous()" class="btn d-sm-none shadow-lg me-1"><i
+                            class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="next()" class="btn d-sm-none shadow-lg ms-1"><i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="assets/js/script.js"></script>

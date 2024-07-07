@@ -1,0 +1,106 @@
+body {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.img-cont {
+    position: relative;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-in-out;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(225, 225, 225, 0.8);
+}
+
+#prev {
+    right: 110px;
+}
+
+.next {
+    right: 45px;
+}
+
+.prev i,
+.next i {
+    font-size: 30px;
+    color: white;
+}
+
+.btn-cont button {
+    border-radius: 50%;
+    background-color: rgba(225, 225, 225, 0.6);
+}
+
+.btn-cont button:hover {
+    background-color: rgba(225, 225, 225, 0.8);
+}
+
+.btn-cont button i {
+    font-size: 35px;
+    color: white;
+}
+
+#crInfo {
+   opacity: 0;
+    width: 90%;
+    position: absolute;
+    top: 95px;
+    left: 35px;
+    background-color: rgba(225, 225, 225, 0.6);
+    transition: all 0.5s ease-in-out;
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+}
+
+.info-btn{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 20px;
+    width: 45px;
+    text-align: start;
+    border-radius: 30px;
+    transition:  .3s ease-in-out;
+}
+
+.info-btn:hover{
+    width: 180px;
+}
+
+.info-btn i{
+    position: relative;
+}
+
+.info-btn i::after{
+    position: absolute;
+    content: "More Info";
+    font-size: 17px;
+    white-space: nowrap;
+    left:45px;
+    top: 2px;
+    color: white;
+    opacity: 0;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+    letter-spacing: 3px;
+}
+
+.info-btn:hover i::after{
+    opacity: 1;
+    left: 30px;
+}
+
