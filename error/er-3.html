@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="userNa"><label for="" id="l11"></label><br><br>
+    <input type="text" id="passW"><label for="" id="l2"></label><br><br>
+    <input type="text" id="Email"><label for="" id="l3"></label><br><br>
+    <button onclick="myFun()">click</button>
+</body>
+
+</html>
+<script>
+    var info = {
+        user: 'abc',
+        passWord:123,
+        email:'abc@gmail.com'
+    }
+
+    function myFun() {
+        var userN = document.getElementById('userNa').value;
+        var passW = document.getElementById('passW').value;
+        var Email = document.getElementById('Email').value;
+        var l1 = document.getElementById('l11');
+        var l2 = document.getElementById('l2');
+        var l3 = document.getElementById('l3');
+        try {
+            if (userN == "") throw 'enter user';
+            if (userN != info.user) throw 'Incorrecr User';
+            if (userN == info.user) throw 'success';
+        } catch (err1) {
+            l1.innerHTML = err1;
+        }
+        try {
+            if (passW == "") throw 'enter passWord';
+            if (passW != info.passWord) throw 'Incorrecr passWord';
+            if (passW == info.passWord) throw 'success';
+        } catch (err2) {
+            l2.innerHTML = err2;
+        }
+        try {
+            if (Email == "") throw 'enter email';
+            if (Email != info.email) throw 'Incorrecr email';
+            if (Email == info.email) throw 'success';
+        } catch (err3) {
+            l3.innerHTML = err3;
+        }
+    }
+</script>
