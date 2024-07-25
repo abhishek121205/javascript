@@ -1,0 +1,381 @@
+body {
+    background-color: var(--bs-body-bg);
+    --bs-body-bg: black;
+}
+
+.container {
+    position: relative;
+}
+
+.speedometer-container {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    /* background-color: cornflowerblue; */
+    margin-top: 20px;
+    border: 2px solid white;
+    position: relative;
+    /* background: rgba(0,0,0,0.6); */
+}
+
+@keyframes circle-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(240deg);
+    }
+}
+
+.bottom-hide {
+    width: 363px;
+    height: 363px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16.5px;
+    left: 16.5px;
+    z-index: 9;
+    background-color: red;
+    /* background: linear-gradient(orange, white, green); */
+}
+
+.bottom-hide-2 {
+    width: 360px;
+    height: 360px;
+    /* background: white; */
+    /* background: linear-gradient( rgb(82, 82, 225), rgb(175, 11, 175),rgb(250, 0, 42) ); */
+    background: linear-gradient(orange, white, green);
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 9;
+    opacity: 1;
+}
+
+.moving-border::before,
+.moving-border::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: -1;
+    /* background: linear-gradient(var(--angle), 
+    rgb(250, 0, 42), rgb(175, 11, 175), rgb(82, 82, 225)); */
+    background: linear-gradient(var(--angle),
+            rgb(0, 98, 0), white, rgb(240, 164, 22));
+    animation: rotate 10s linear infinite;
+    border-radius: 50%;
+}
+
+.moving-border::after {
+    filter: blur(20px);
+}
+
+.border-speed {
+    border: 2px solid whitesmoke;
+}
+
+.border-speed::after {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+    z-index: -1;
+    background-color: red;
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.input-1 {
+    position: relative;
+    border: 5px solid rgb(235, 42, 42);
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 15px;
+}
+
+@keyframes rotate {
+    0% {
+        --angle: 0deg;
+    }
+
+    100% {
+        --angle: 360deg;
+    }
+}
+
+.arrow {
+    width: 120px;
+    height: 12px;
+    /* background-color: rgb(228, 68, 68); */
+    background-color: cyan;
+    border: 1px solid rgb(11, 130, 130);
+    position: absolute;
+    border-top-left-radius: 60%;
+    border-bottom-left-radius: 60%;
+    left: -45px;
+    top: 76px;
+}
+
+.arrow-container {
+    height: 160px;
+    width: 160px;
+    position: absolute;
+    top: 118px;
+    left: 118px;
+    background-color: transparent;
+    z-index: 12;
+}
+
+.center-point {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-color: rgb(16, 16, 199);
+    border-radius: 50%;
+    top: 163px;
+    left: 163px;
+    z-index: 15;
+    border: 5px solid cyan;
+}
+
+
+#arrow-wrapper {
+    height: 160px;
+    width: 160px;
+    position: relative;
+    background-color: transparent;
+    transform: rotate(0deg);
+    transition: 1s ease-in-out;
+}
+
+#arrow-wrapper-2 {
+    height: 160px;
+    width: 160px;
+    position: relative;
+    background-color: transparent;
+    transform: rotate(0deg);
+    transition: 1s ease-in-out;
+    animation: circle-1 2s alternate infinite;
+}
+
+.lines {
+    position: absolute;
+    width: 390px;
+    height: 8px;
+    background-color: rgb(16, 16, 199);
+    top: 194px;
+    left: 3px;
+    z-index: 7;
+}
+
+.lines-2-2 {
+    background-color: white;
+    position: absolute;
+    width: 390px;
+    height: 8px;
+    top: 194px;
+    left: 3px;
+    z-index: 7;
+}
+
+.speed-numbers {
+    position: absolute;
+    font-size: 32px;
+    font-family: "Roboto Mono", monospace;
+    z-index: 11;
+    letter-spacing: -2px;
+    color: white;
+}
+
+.speed-numbers-2 {
+    position: absolute;
+    font-size: 47px;
+    font-family: "Roboto Mono", monospace;
+    z-index: 16;
+    letter-spacing: -2px;
+    color: rgb(1, 1, 99);
+}
+
+.speed-icon {
+    font-size: 35px;
+}
+
+.car-img {
+    position: absolute;
+    left: 16.5px;
+    top: 16.5px;
+    z-index: 10;
+}
+
+.car-img img {
+    width: 363px;
+    height: 363px;
+    border-radius: 50%;
+}
+
+.icon-1 {
+    color: lightcoral;
+    font-weight: 700;
+
+}
+
+.icon-2 {
+    color: lightslategray;
+    font-weight: 700;
+}
+
+.icon-3 {
+    color: lightgreen;
+    font-weight: 700;
+}
+
+.icon-4 {
+    color: cyan;
+    font-weight: 700;
+}
+
+/* .glowing::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    border-radius: 50%;
+    animation: glower 20s linear infinite;
+}
+
+@keyframes glower {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+} */
+
+.lines-1 {
+    transform: rotate(30deg)
+}
+
+.lines-2 {
+    transform: rotate(60deg)
+}
+
+.lines-3 {
+    transform: rotate(90deg)
+}
+
+.lines-4 {
+    transform: rotate(120deg)
+}
+
+.lines-5 {
+    transform: rotate(150deg)
+}
+
+.lines-6 {
+    transform: rotate(15deg)
+}
+
+.lines-7 {
+    transform: rotate(45deg)
+}
+
+.lines-8 {
+    transform: rotate(75deg)
+}
+
+.lines-9 {
+    transform: rotate(105deg)
+}
+
+.lines-10 {
+    transform: rotate(135deg)
+}
+
+.lines-11 {
+    transform: rotate(165deg)
+}
+
+.num-0-2 {
+    top: 160px;
+    left: 23px;
+}
+
+.num-1-2 {
+    top: 26px;
+    left: 102px;
+}
+
+.num-2-2 {
+    top: 25px;
+    left: 267px;
+}
+
+.num-3-2 {
+    top: 161px;
+    left: 348px;
+}
+
+.num-4-2 {
+    top: 296px;
+    left: 266px;
+}
+
+.num-0 {
+    top: 173px;
+    left: 24px;
+}
+
+.num-30 {
+    top: 93px;
+    left: 48px;
+}
+
+.num-60 {
+    top: 37px;
+    left: 101px;
+}
+
+.num-90 {
+    top: 13px;
+    left: 179px;
+}
+
+.num-120 {
+    top: 38px;
+    left: 249px;
+}
+
+.num-150 {
+    top: 93px;
+    left: 302px;
+}
+
+.num-180 {
+    top: 173px;
+    left: 325px;
+}
+
+.num-210 {
+    top: 252px;
+    left: 303px;
+}
+
+.num-240 {
+    top: 309px;
+    left: 248px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container pb-3">
+            <div class="row justify-content-center ">
+                <div class="col-5 ">
+                    <div class="speedometer-container moving-border">
+                        <div class="bottom-hide-2"></div>
+                        <div class="center-point"></div>
+                        <div class="arrow-container" id="arrow-box">
+                            <div class="arrow-wrapper-2" id="arrow-wrapper-2">
+                                <div class="arrow "></div>
+                            </div>
+                        </div>
+                        <div class="speed-numbers-2 num-0-2"><span>0</span></div>
+                        <!-- <div class="speed-numbers num-30"><span></span></div> -->
+                        <div class="speed-numbers-2 num-1-2"><span>1</span></div>
+                        <!-- <div class="speed-numbers num-90"><span></span></div> -->
+                        <div class="speed-numbers-2 num-2-2"><span>2</span></div>
+                        <!-- <div class="speed-numbers num-150"><span></span></div> -->
+                        <div class="speed-numbers-2 num-3-2"><span>3</span></div>
+                        <!-- <div class="speed-numbers num-210"><span></span></div> -->
+                        <div class="speed-numbers-2 num-4-2"><span>4</span></div>
+                        <div class="lines" style="transform: rotate(20deg);"></div>
+                        <div class="lines" style="transform: rotate(40deg);"></div>
+                        <div class="lines " style="transform: rotate(60deg);"></div>
+                        <div class="lines " style="transform: rotate(80deg);"></div>
+                        <div class="lines " style="transform: rotate(100deg);"></div>
+                        <div class="lines " style="transform: rotate(120deg);"></div>
+                        <div class="lines " style="transform: rotate(140deg);"></div>
+                        <div class="lines " style="transform: rotate(160deg);"></div>
+                        <div class="lines " style="transform: rotate(180deg);"></div>
+                    </div>
+                </div>
+                <div class="col-5 ">
+                    <div class="speedometer-container border-speed">
+                        <div class="car-img shadow-lg" style="border-radius: 50%;">
+                            <img src="./assets/images/car.jpg" alt="">
+                        </div>
+                        <div class="bottom-hide"></div>
+                        <div class="center-point" style="background-color: black; border: 5px solid white;"></div>
+                        <div class="arrow-container" id="arrow-box">
+                            <div class="arrow-wrapper" id="arrow-wrapper">
+                                <div class="arrow" style="background-color: white;"></div>
+                            </div>
+                        </div>
+                        <div class="speed-numbers num-0"><span>0</span></div>
+                        <div class="speed-numbers num-30"><span>30</span></div>
+                        <div class="speed-numbers num-60"><span>60</span></div>
+                        <div class="speed-numbers num-90"><span>90</span></div>
+                        <div class="speed-numbers num-120"><span>120</span></div>
+                        <div class="speed-numbers num-150"><span>150</span></div>
+                        <div class="speed-numbers num-180"><span>180</span></div>
+                        <div class="speed-numbers num-210"><span>210</span></div>
+                        <div class="speed-numbers num-240"><span>240</span></div>
+                        <div class="lines-2-2"></div>
+                        <div class="lines-2-2 lines-1"></div>
+                        <div class="lines-2-2 lines-2"></div>
+                        <div class="lines-2-2 lines-3"></div>
+                        <div class="lines-2-2 lines-4"></div>
+                        <div class="lines-2-2 lines-5"></div>
+                        <div class="lines-2-2 lines-6"></div>
+                        <div class="lines-2-2 lines-7"></div>
+                        <div class="lines-2-2 lines-8"></div>
+                        <div class="lines-2-2 lines-9"></div>
+                        <div class="lines-2-2 lines-10"></div>
+                        <div class="lines-2-2 lines-11"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="speed-icon  text-center" style="position: relative;">
+                <div class="icon-5" style="position: absolute; left: 45%; top: -50px; color: orange;"><span><i class="fa-solid fa-oil-can"></i></span></div>
+                <div class=" icon-1 d-inline"><span>P</div>
+                <div class=" icon-2 d-inline mx-4"><span>R</div>
+                <div class=" icon-3 d-inline"><span>N</div>
+                <div class=" icon-4 d-inline ms-4"><span>D</div>
+            </div>
+            <div class="speed-input">
+                <input type="text" id="input" class="input-1">
+                <button onclick="speed()" class="d-block mt-3 btn"
+                    style="color:white;font-size: 20px; padding: 5px 50px; background-color: black; border: 5px solid rgb(235, 42, 42); border-radius: 15px;">RUN</button>
+            </div>
+        </div>
+    </center>
+</body>
+<script src="./assets/js/script.js"></script>
+
+</html>
