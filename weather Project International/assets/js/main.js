@@ -6,7 +6,7 @@ $.ajax({
     url: 'https://api.countrystatecity.in/v1/countries',
     method: 'GET',
     headers: {
-        "X-CSCAPI-KEY": "RU1oZVNOQjRieWZyQlM1alNhNFdIZkRpMm02YUhmdHVxZm9UWXo3eQ=="
+        "X-CSCAPI-KEY": "enter your key"
     },
     success: function (res) {
         getCountry(res);
