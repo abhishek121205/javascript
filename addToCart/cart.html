@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <title>cart</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.7);">
+    <header id="header"></header>
+    <section class="view-cart" id="view-cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-4">
+                    <div class="view-cart-content">
+                        <table action="" class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-1">Image</th>
+                                    <th class="col-2">Name</th>
+                                    <th class="col-2">Price</th>
+                                    <th class="col-3">Qty</th>
+                                    <th class="col-4">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyData" class="align-items-center"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-3 pt-2">
+                <button onclick="tabClr()" class="btn btn-success" style="width: 100px;">CLEAR</button>
+                <span class="text-white mt-2 fs-5 px-0" style="display: inline;">
+                    TOTAL COST
+                    <span id="subTotal">$0</span>
+                </span>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+<script src="assets/js/header.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.fa-bars').click(function (e) {
+            e.preventDefault()
+
+            $('.nav-2').slideToggle()
+        })
+    })
+</script>
+<script>
+    var products = JSON.parse(localStorage.getItem('products'));
+    function printTable() {
+        // console.log(products)
+        let cartData = "";
+        let totalVal = 0;
+        if (products) {
+            for (var i = 0; i < products.length; i++) {
+                totalVal += products[i].price * products[i].quantity;
+                cartData += `
+            <tr>
+                <td><img src="${products[i].image}" alt="" width="80px"></td>
+                <td>${products[i].name}</td>
+                <td>$${products[i].price}</td>
+                <td>
+                    <button class="btn btn-primary " onclick="increase(${i})">+</button>
+                    <span style="font-size:25px;" class="">${products[i].quantity}</span>
+                    <button class="btn btn-primary mt-1 mt-sm-2 me-sm-4 mt-md-0 me-md-0" onclick="decrease(${i})">-</button>
+                </td>
+                <td>
+                    $${products[i].price * products[i].quantity}
+                    <button class="btn btn-danger" onclick="del(${i})">DELETE</button>
+                </td>
+            </tr> 
+        `
+            }
+        }
+        document.getElementById('tbodyData').innerHTML = cartData;
+        document.getElementById('subTotal').innerHTML = `$${totalVal}`;
+    }
+
+
+
+    function del(ind) {
+        products.splice(ind, 1);
+        saveToLocalStorage();
+        printTable();
+        viewData();
+    }
+
+    function tabClr() {
+        products.splice(0, products.length);
+        saveToLocalStorage();
+        printTable();
+        viewData();
+    }
+
+    function increase(ind) {
+        products[ind].quantity += 1;
+        saveToLocalStorage();
+        printTable();
+    }
+
+    function decrease(ind) {
+        if (products[ind].quantity != 1) {
+            products[ind].quantity -= 1;
+            saveToLocalStorage();
+            printTable();
+        } else {
+            alert('Invalid!');
+        }
+    }
+    printTable();
+    function saveToLocalStorage() {
+        localStorage.setItem('products', JSON.stringify(products));
+    }
+
+</script>
